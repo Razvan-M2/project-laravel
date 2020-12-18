@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Content extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+    protected $fillable = ['date'];
+    protected $primaryKey = "id";
 
     public function user()
     {
