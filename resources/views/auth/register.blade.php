@@ -8,14 +8,28 @@
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
-
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
+            {{-- We need :
+                First Name /
+                Username /
+                Profile Picture ? --}}
+            <div class="mt-4">
+                <x-jet-label for="username" value="{{ __('Username') }}" />
+                <x-jet-input id="user_name" class="block mt-1 w-full" type="text" name="user_name" :value="old('user_name')" required />
+            </div>
+            <div class="w-2/5 inline-block mt-4">
+                <x-jet-label for="first_name" value="{{ __('First Name') }}" />
+                <x-jet-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="first-name" />
+            </div>
+            <div class="w-2/5 inline-block mt-4 ml-6">
+                <x-jet-label for="name" value="{{ __('Last Name') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
-
             <div class="mt-4">
                 <x-jet-label for="email" value="{{ __('Email') }}" />
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            </div>
+            <div class="mt-4">
+                <x-jet-label for="email" value="{{ __('Confirm Email') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 

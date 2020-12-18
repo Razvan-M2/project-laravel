@@ -18,12 +18,12 @@ class CreateLogsTable extends Migration
                 $table->id();
                 $table->date('date');
                 $table->unsignedBigInteger('id-utilizator');
-                $table->foreign('id-utilizator')->references('id')->on('users')->onDelete('cascade');
+                // $table->foreign('id-utilizator')->references('id')->on('users')->onDelete('cascade');
                 $table->string('action');
                 $table->unsignedBigInteger('id-content');
-                $table->foreign('id-content')->references('id')->on('content')->onDelete('cascade');
+                // $table->foreign('id-content')->references('id')->on('content')->onDelete('cascade');
                 $table->unsignedBigInteger('id-message');
-                $table->foreign('id-message')->references('id')->on('chat')->onDelete('cascade');
+                // $table->foreign('id-message')->references('id')->on('chat')->onDelete('cascade');
             });
         }
     }

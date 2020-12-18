@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Livewire\ContentFeed;
+use App\Http\Livewire\ContentPost;
+use App\Http\Livewire\AdminPage;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +22,9 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/feed', ContentFeed::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('/feed/{id}', ContentPost::class)->name('post');
+Route::middleware(['auth:sanctum', 'verified'])->get('/admin_page', AdminPage::class);
+
+

@@ -18,9 +18,9 @@ class CreateChatTable extends Migration
                 $table->id();
                 $table->date('date');
                 $table->unsignedBigInteger('id-user');
-                $table->foreign('id-user')->references('id')->on('users')->onDelete('cascade');
+                // $table->foreign('id-user')->references('id')->on('users')->onDelete('cascade');
                 $table->unsignedBigInteger('id-category');
-                $table->foreign('id-category')->references('id')->on('categories')->onDelete('cascade');
+                // $table->foreign('id-category')->references('id')->on('categories')->onDelete('cascade');
                 $table->unsignedBigInteger('id-message');
                 $table->tinyInteger('type');
                 $table->text('content');
