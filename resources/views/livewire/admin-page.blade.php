@@ -1,9 +1,16 @@
 <div>    
-    <x-slot name="header">
+    {{-- <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Admin Page') }}
         </h2>
-    </x-slot>
+    </x-slot> --}}
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight inline-block">
+                {{ __('Admin Page') }}
+            </h2>
+        </div>
+    </header>
     <select  class="border-gray-300 border pt-2 pb-2 pl-3 pr-3 rounded-md" name="cat_select_container" id="cat_select_container" wire:change="selectedCategory()" wire:model="selected_cat_id">
         @foreach ($categories as $category)
             <option value="{{$category->id}}">{{$category->category_name}}</option>

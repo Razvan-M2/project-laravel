@@ -1,12 +1,25 @@
-<x-slot name="header">
+{{-- <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight inline-block">
         {{ __('Posts Page') }}
     </h2>
     <div id="content-column-header" class="float-right">
         <x-jet-secondary-button href="/feed">Back to main</x-jet-secondary-button>
-        {{-- <x-jet-secondary-button wire:click="$toggle('confirmingCategoryAddition')">Write a topic</x-jet-secondary-button> --}}
+        <x-jet-secondary-button wire:click="$toggle('confirmingCategoryAddition')">Write a topic</x-jet-secondary-button>
     </div>
-</x-slot>
+</x-slot> --}}
+
+<header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight inline-block">
+            {{ __('Posts Page') }}
+        </h2>
+        <div id="content-column-header" class="inline-block float-right">
+            <x-jet-secondary-button>
+                <a href="/feed">Back to main</a>
+            </x-jet-secondary-button>
+        </div>
+    </div>
+</header>
 <div class="flex justify-center">
     <div id="card" class="bg-white w-4/6 mt-20 p-8 pt-0 rounded-md shadow-2xl">
         {{-- The Master doesn't talk, he acts. --}}

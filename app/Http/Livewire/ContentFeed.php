@@ -14,7 +14,6 @@ class ContentFeed extends Component
 {
     use WithPagination;  
 
-    // private $data;
     public $confirmingCategoryAddition;
 
     protected $listeners = ['post-success' => 'hideModal'];
@@ -26,9 +25,6 @@ class ContentFeed extends Component
 
     public function render()
     {
-        // $tableData = new Content;
-
-        // return view('livewire.content-feed',['content'=>Content::paginate(10)])->layout('layouts.app');
         return view('livewire.content-feed',['content'=>Content::orderByDesc('date')->simplePaginate(10)])->layout('layouts.app');
     }
 

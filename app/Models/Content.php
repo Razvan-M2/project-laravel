@@ -19,12 +19,6 @@ class Content extends Model
         return $this->belongsTo(User::class, 'id_user');
     }
 
-
-
-    // public function categories()
-    // {
-    //     return $this->hasMany(ContentHasCategory::class, 'id');
-    // }
     public function category()
     {
         return $this->belongsTo(Category::class, 'id_category');

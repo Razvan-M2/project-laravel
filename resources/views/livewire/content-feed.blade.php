@@ -1,12 +1,14 @@
 <div>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight inline-block">
-            {{ __('Posts Page') }}
-        </h2>
-        <div id="content-column-header" class="float-right">
-            <x-jet-secondary-button wire:click="$toggle('confirmingCategoryAddition')">Write a topic</x-jet-secondary-button>
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight inline-block">
+                {{ __('Posts Page') }}
+            </h2>
+            <div id="content-column-header" class="inline-block float-right">
+                <x-jet-secondary-button wire:click="$toggle('confirmingCategoryAddition')">Write a topic</x-jet-secondary-button>
+            </div>
         </div>
-    </x-slot>
+    </header>
 
     <div id="content-column-feed" class= "w-3/4 m-auto">
         @foreach ($content as $item)
