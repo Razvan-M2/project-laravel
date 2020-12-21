@@ -25,13 +25,11 @@ class PostTopicForm extends Component
 
     protected $listeners = ['send-post' => 'postForm'];
 
-    public function mount($user_id)
+    public function mount()
     {
-        $this->user_id = $user_id;
         $this->title = "";
         $this->content = "";
         $this->category = "";
-        // dd(Carbon::now());
     }
 
     public function render()
@@ -41,7 +39,7 @@ class PostTopicForm extends Component
 
     public function postForm()
     {
-        // $this->validate();
+        $this->validate();
 
         $CarbonDate = Carbon::now();
 
@@ -50,7 +48,7 @@ class PostTopicForm extends Component
         $content->id_category = $this->category;
         $content->title = $this->title;
         $content->description = $this->content;
-        $content->id_user = $this->user_id;
+        $content->id_user = auth()->user()->id;
 
         $content->save();
 
@@ -60,8 +58,6 @@ class PostTopicForm extends Component
         $content_category_link->id_category = $this->category;
         $content_category_link->save();
 
-        dd($content->id);
         $this->emitUp('post-success');
-        // dd($this->category);
     }
 }

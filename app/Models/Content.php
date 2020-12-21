@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+// use Category;
 
 class Content extends Model
 {
@@ -18,12 +19,14 @@ class Content extends Model
         return $this->belongsTo(User::class, 'id_user');
     }
 
-    // public function chat()
+
+
+    // public function categories()
     // {
-    //     return $this->hasMany
+    //     return $this->hasMany(ContentHasCategory::class, 'id');
     // }
-    // public function chat()
-    // {
-    //     return $this->hasMany(, 'foreign_key', );
-    // }
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'id_category');
+    }
 }

@@ -28,8 +28,8 @@ class ContentFeed extends Component
     {
         // $tableData = new Content;
 
-        // return view('livewire.content-feed',['content'=>$tableData->paginate(10)])->layout('layouts.app');
-        return view('livewire.content-feed',['content'=>Content::paginate(10)])->layout('layouts.app');
+        // return view('livewire.content-feed',['content'=>Content::paginate(10)])->layout('layouts.app');
+        return view('livewire.content-feed',['content'=>Content::orderByDesc('date')->simplePaginate(10)])->layout('layouts.app');
     }
 
     public function selectedPost($id)

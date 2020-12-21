@@ -11,10 +11,7 @@ class ContentPost extends Component
 
     public function mount($id)
     {
-        // dd($id);
         $this->post_id = $id;
-        // dd('We are here!');
-        // dd(Content::where('id',$this->post_id)->first());
     }
 
     public function render()
