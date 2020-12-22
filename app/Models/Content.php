@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 // use Category;
+use Rating;
 
 class Content extends Model
 {
@@ -22,5 +23,10 @@ class Content extends Model
     public function category()
     {
         return $this->belongsTo(Category::class, 'id_category');
+    }
+
+    public function rating()
+    {
+        return $this->hasOne(Rating::class, 'id_rating');
     }
 }
