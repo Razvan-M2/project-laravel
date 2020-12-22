@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
                 $table->string('password');
                 $table->rememberToken();
                 $table->text('profile_photo_path')->nullable();
-                $table->tinyInteger('id_role')->nullable();
+                $table->unsignedBigInteger('id_role')->default(2);
                 $table->boolean('is_activ')->nullable();
                 $table->timestamps();
             });

@@ -24,7 +24,7 @@
                     <img class="h-10 w-10 rounded-full object-cover inline-block" src="{{ $item->user->profile_photo_url }}"/>
                 </span>
                 <div class="text-sm text-cool-gray-500">Asked on : {{$item->date}}</div>
-                <div class="text-sm text-cool-gray-500">Role : Default</div>
+                <div class="text-sm text-cool-gray-500">Role : User</div>
             </div>
         @endforeach
         <div class="pb-5">
