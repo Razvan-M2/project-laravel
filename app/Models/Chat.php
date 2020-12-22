@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use User;
+// use User;
 
 class Chat extends Model
 {
@@ -16,6 +16,7 @@ class Chat extends Model
     protected function user()
     {
         //  This belongs to User with this id
-        return $this->belongsTo(User::class, 'id-user');
+        return $this->belongsTo(User::class, 'id_user', 'id');
     }
+
 }

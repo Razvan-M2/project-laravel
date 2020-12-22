@@ -31,6 +31,7 @@ class User extends Authenticatable
         'first_name',
         'email',
         'password',
+        'id_role'
     ];
 
     /**
@@ -66,6 +67,11 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsTo(Roles::class,'id_role');
+    }
+
+    public function chat()
+    {
+        return $this->hasMany(Chat::class,'id_user');
     }
 
 }
