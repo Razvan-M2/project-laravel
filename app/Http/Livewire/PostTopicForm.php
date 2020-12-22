@@ -6,7 +6,6 @@ use Carbon\Carbon;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Content;
-use App\Models\Content_Category;
 
 class PostTopicForm extends Component
 {
@@ -51,12 +50,6 @@ class PostTopicForm extends Component
         $content->id_user = auth()->user()->id;
 
         $content->save();
-
-        $content_category_link = new Content_Category;
-
-        $content_category_link->id_content = $content->id;
-        $content_category_link->id_category = $this->category;
-        $content_category_link->save();
 
         $this->emitUp('post-success');
     }
