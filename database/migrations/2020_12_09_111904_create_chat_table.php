@@ -17,11 +17,11 @@ class CreateChatTable extends Migration
             Schema::create('chat', function (Blueprint $table) {
                 $table->id();
                 $table->date('date');
-                $table->unsignedBigInteger('id-user');
+                $table->unsignedBigInteger('id_user');
                 // $table->foreign('id-user')->references('id')->on('users')->onDelete('cascade');
-                $table->unsignedBigInteger('id-category');
+                $table->unsignedBigInteger('id_category');
                 // $table->foreign('id-category')->references('id')->on('categories')->onDelete('cascade');
-                $table->unsignedBigInteger('id-message');
+                $table->unsignedBigInteger('id_message');
                 $table->tinyInteger('type');
                 $table->text('content');
                 $table->tinyInteger('verified');

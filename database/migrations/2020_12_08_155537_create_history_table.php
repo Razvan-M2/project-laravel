@@ -19,13 +19,13 @@ class CreateHistoryTable extends Migration
                 $table->string('name');
                 $table->unsignedBigInteger('z_id')->nullable();
                 $table->date('date');
-                $table->unsignedBigInteger('id-category');
+                $table->unsignedBigInteger('id_category');
                 // $table->foreign('id-category')->references('id')->on('categories')->onDelete('cascade');
                 $table->string('title');
                 $table->text('description',);
-                $table->unsignedBigInteger('id-user-modified')->nullable();
+                $table->unsignedBigInteger('id_user_modified')->nullable();
                 // $table->foreign('id-user-modified')->references('id')->on('users')->onDelete('cascade');
-                $table->unsignedBigInteger('id-rating');
+                $table->unsignedBigInteger('id_rating');
                 // $table->foreign('id-rating')->references('id')->on('ratings');
             });
         }

@@ -17,12 +17,12 @@ class CreateLogsTable extends Migration
             Schema::create('logs', function (Blueprint $table) {
                 $table->id();
                 $table->date('date');
-                $table->unsignedBigInteger('id-utilizator');
+                $table->unsignedBigInteger('id_utilizator');
                 // $table->foreign('id-utilizator')->references('id')->on('users')->onDelete('cascade');
                 $table->string('action');
-                $table->unsignedBigInteger('id-content');
+                $table->unsignedBigInteger('id_content');
                 // $table->foreign('id-content')->references('id')->on('content')->onDelete('cascade');
-                $table->unsignedBigInteger('id-message');
+                $table->unsignedBigInteger('id_message');
                 // $table->foreign('id-message')->references('id')->on('chat')->onDelete('cascade');
             });
         }

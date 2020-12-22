@@ -17,7 +17,7 @@ class CreateRatingsTable extends Migration
             Schema::create('ratings', function (Blueprint $table) {
                 $table->id();
                 $table->timestamps();
-                $table->tinyInteger('rating-value');
+                $table->tinyInteger('rating_value');
             });
         }
     }
