@@ -22,6 +22,7 @@ class CreateLogErrorsTable extends Migration
                 $table->text('stacktrace');
                 $table->string('level');
                 $table->string('data');
+                $table->timestamps();
             });
         }
     }

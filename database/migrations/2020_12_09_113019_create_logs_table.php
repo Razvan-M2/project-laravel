@@ -24,6 +24,7 @@ class CreateLogsTable extends Migration
                 // $table->foreign('id-content')->references('id')->on('content')->onDelete('cascade');
                 $table->unsignedBigInteger('id_message');
                 // $table->foreign('id-message')->references('id')->on('chat')->onDelete('cascade');
+                $table->timestamps();
             });
         }
     }

@@ -26,6 +26,7 @@ class CreateChatTable extends Migration
                 $table->text('content');
                 $table->tinyInteger('verified');
                 $table->text('stamp')->nullable();
+                $table->timestamps();
             });
         }
     }

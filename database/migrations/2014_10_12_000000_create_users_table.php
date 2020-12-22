@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
                 $table->text('profile_photo_path')->nullable();
                 $table->tinyInteger('id_role')->nullable();
                 $table->boolean('is_activ')->nullable();
+                $table->timestamps();
             });
         }
     }

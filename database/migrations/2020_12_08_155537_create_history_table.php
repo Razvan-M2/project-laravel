@@ -27,6 +27,7 @@ class CreateHistoryTable extends Migration
                 // $table->foreign('id-user-modified')->references('id')->on('users')->onDelete('cascade');
                 $table->unsignedBigInteger('id_rating');
                 // $table->foreign('id-rating')->references('id')->on('ratings');
+                $table->timestamps();
             });
         }
     }
