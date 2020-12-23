@@ -14,6 +14,10 @@ class PostComment extends Component
     public $id_user;
     public $id_message;
 
+    protected $rules = [
+        'comment_text' => 'required|min:20'
+    ];
+
     public function mount($id_content,$id_user,$id_message)
     {
         $this->id_content=$id_content;
@@ -28,7 +32,7 @@ class PostComment extends Component
 
     public function submit_comment()
     {
-        // dd($this->id_user);
+        $this->validate();
 
         $carbonDate = Carbon::now();
         $chat = new Chat;
@@ -40,5 +44,8 @@ class PostComment extends Component
         $chat->content = $this->comment_text;
         $chat->stamp = null;
         $chat->save();
+        $this->comment_text = '';
+
+        $this->emit('message-commented');
     }
 }

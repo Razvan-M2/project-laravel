@@ -16,7 +16,12 @@
     <div id="content-column-feed" class= "w-3/4 m-auto">
         @foreach ($content as $item)
             <div class="select-none cursor-pointer mb-5 bg-white rounded-md p-4 h-28 mt-10 shadow active:bg-gray-100" wire:click="selectedPost({{$item->id}})">
-                <span class="inline-block text-lg mb-2">{{$item->title}}</span>
+                <span class="inline-block text-lg mb-4">
+                    @if ($item->answered == 1)
+                    <span class="bg-green-400 text-white p-2 rounded-md">[Answered]</span>   
+                    @endif
+                    {{$item->title}}
+                </span>
                 <span class="float-right" style="margin-top:-5px">
                     <span class="text-sm mr-3">
                         {{$item->user->user_name}}
