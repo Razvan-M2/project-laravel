@@ -41,6 +41,7 @@ class CreateChatTable extends Migration
                 $table->text('content');
                 // $table->tinyInteger('verified');
                 $table->text('stamp')->nullable();
+                $table->tinyInteger('accepted_answerd')->default(0);
                 $table->timestamps();
             });
         }

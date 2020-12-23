@@ -16,8 +16,11 @@ class CreateRatingsTable extends Migration
         if (!Schema::hasTable('ratings')) {
             Schema::create('ratings', function (Blueprint $table) {
                 $table->id();
+                $table->unsignedBigInteger('id_user');
+                $table->unsignedBigInteger('id_content');
+                $table->integer('value');
                 $table->timestamps();
-                $table->tinyInteger('rating_value');
+                // $table->tinyInteger('rating_value');
             });
         }
     }

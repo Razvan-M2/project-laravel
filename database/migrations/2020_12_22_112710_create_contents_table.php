@@ -21,9 +21,10 @@ class CreateContentsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_rating');
+            // $table->unsignedBigInteger('id_rating');
             $table->string('stamp')->nullable();
-            $table->tinyInteger('validated')->nullable();
+            $table->tinyInteger('answered')->default(0);
+            $table->dateTime('answer_date')->nullable();
         });
     }
 

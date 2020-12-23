@@ -28,16 +28,6 @@ class CreateUsersTable extends Migration
                 $table->boolean('is_activ')->nullable();
                 $table->timestamps();
             });
-            // DB::table('users')->insert(
-            //     array(
-            //         'name' => 'admin',
-            //         'user_name' => 'admin',
-            //         'first_name' => 'admin',
-            //         'email' => 'admin@gmail.com',
-            //         'password' => 'nu4/56f69h0j9k@asfd',
-            //         'id_role' => 1
-            //     )
-            // );
         }
     }
 

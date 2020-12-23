@@ -43,21 +43,18 @@ class PostTopicForm extends Component
 
         $CarbonDate = Carbon::now();
 
-        $rating = new Rating;
-
-        $rating->rating_value = 0;
-        $rating->save();
-
         $content = new Content;
         $content->date = $CarbonDate->toDateTimeString();
         $content->id_category = $this->category;
         $content->title = $this->title;
         $content->description = $this->content;
         $content->id_user = auth()->user()->id;
-        $content->id_rating = $rating->id;
 
         $content->save();
 
+        $this->title = '';
+        $this->content = '';
+        $this->category = 0;
         $this->emitUp('post-success');
     }
 }

@@ -20,9 +20,12 @@ class ZApplyForeignKeys extends Migration
         Schema::table('contents', function (Blueprint $table) {
             $table->foreign('id_category')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('id_rating')->references('id')->on('ratings')->onDelete('cascade');
         });
         Schema::table('chat', function (Blueprint $table) {
+            $table->foreign('id_content')->references('id')->on('contents')->onDelete('cascade');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+        });
+        Schema::table('ratings', function (Blueprint $table) {
             $table->foreign('id_content')->references('id')->on('contents')->onDelete('cascade');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
