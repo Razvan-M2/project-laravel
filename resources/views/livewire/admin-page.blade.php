@@ -11,18 +11,21 @@
             </h2>
         </div>
     </header>
+    <div  class="bg-white shadow p-4 inline-block align-middle rounded-md mx-40 mt-14 ">
+    <div class="pb-5 h-10 font-bold"><p class="font-semibold text-l text-gray-800 leading-tight underline">Categories</p></div>
     <select  class="border-gray-300 border pt-2 pb-2 pl-3 pr-3 rounded-md" name="cat_select_container" id="cat_select_container" wire:change="selectedCategory()" wire:model="selected_cat_id">
         @foreach ($categories as $category)
             <option value="{{$category->id}}">{{$category->category_name}}</option>
         @endforeach
     </select>
-    <x-jet-input type="text" name="cat_edit_container" id="cat_edit_container" wire:model="selected_cat_name"/>
-    <x-jet-secondary-button type="button" value="Update!" wire:click="updateCategory()">Update!</x-jet-secondary-button>
-    <x-jet-secondary-button type="button" value="Delete!" wire:click="$toggle('confirmingUserDeletion')">Delete!</x-jet-secondary-button>
-    <x-jet-secondary-button type="button" value="Add Category!" wire:click="$toggle('confirmingCategoryAddition')">Add Category!</x-jet-secondary-button>
+    
+    <x-jet-input class="ml-3" type="text" name="cat_edit_container" id="cat_edit_container" wire:model="selected_cat_name"/>
+    <x-jet-secondary-button class="ml-3" type="button" value="Update!" wire:click="updateCategory()">Update!</x-jet-secondary-button>
+    <x-jet-secondary-button class="ml-3" type="button" value="Delete!" wire:click="$toggle('confirmingUserDeletion')">Delete!</x-jet-secondary-button>
+    <x-jet-secondary-button class="ml-3" type="button" value="Add Category!" wire:click="$toggle('confirmingCategoryAddition')">Add Category!</x-jet-secondary-button>
     {{-- @error('name') <span class="error">{{ $message }}</span> @enderror --}}
 
-
+    </div>
     <x-jet-confirmation-modal wire:model="confirmingCategoryDeletion">
         <x-slot name="title">
             Delete Category
